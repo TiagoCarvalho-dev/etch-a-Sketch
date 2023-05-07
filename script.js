@@ -2,19 +2,13 @@ const gridContainer = document.getElementById('gridContainer');
 
 let gridSize;
 setGridSize(16);
-
-const rowSquares = document.querySelectorAll('.rowSquares');
-
-rowSquares.forEach((e) => {
-  e.addEventListener('mouseover', () => {
-    e.setAttribute('style', 'background-color: blue');
-  });
-});
+changeSquareColor();
 
 document.getElementById('changeGridSizeButton').addEventListener('click', () => {
   gridSize = prompt('Type the amount of squares per side you want the new grid to have:');
   removeExistingGrid();
   setGridSize(gridSize);
+  changeSquareColor();
 });
 
 function setGridSize(gridSize) {
@@ -42,4 +36,13 @@ function removeExistingGrid() {
     for(k = 0; k < rows.length; k++){
       gridContainer.removeChild(gridContainer.lastChild);
     }
+}
+
+function changeSquareColor() {
+  const rowSquares = document.querySelectorAll('.rowSquares');
+  rowSquares.forEach((e) => {
+    e.addEventListener('mouseover', () => {
+      e.setAttribute('style', 'background-color: blue');
+    });
+  });
 }
