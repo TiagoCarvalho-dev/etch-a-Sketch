@@ -20,7 +20,6 @@ body {
 }
 
 #gridContainer {
-  border: solid 1px blue;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -30,10 +29,8 @@ body {
 }
 
 .row {
-  border: solid 1px red;
   display: flex;
   flex: 1;
-  height: 50px;
   margin: 0;
   padding: 0;
 }
