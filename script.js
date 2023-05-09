@@ -2,7 +2,7 @@ const gridContainer = document.getElementById('gridContainer');
 
 let gridSize;
 setGridSize(16);
-changeSquareColorBlack();
+changeSquareColorDarkGreen();
 
 document.getElementById('changeGridSizeButton').addEventListener('click', () => {
   removeExistingGrid();
@@ -12,10 +12,10 @@ document.getElementById('changeGridSizeButton').addEventListener('click', () => 
       gridSize = 16;
     }
   setGridSize(gridSize);
-  changeSquareColorBlack();
+  changeSquareColorDarkGreen();
 });
 
-document.getElementById('selectBlackPencilButton').addEventListener('click', () => changeSquareColorBlack());
+document.getElementById('selectDarkGreenPencilButton').addEventListener('click', () => changeSquareColorDarkGreen());
 document.getElementById('clearGridButton').addEventListener('click', () => clearGrid());
 document.getElementById('selectRainbowPencilButton').addEventListener('click', () => changeSquareColorRGB());
 document.getElementById('selectEraserButton').addEventListener('click', () => changeSquareColorNone());
@@ -62,13 +62,13 @@ function changeSquareColorRGB() {
   });
 }
 
-function changeSquareColorBlack() {
+function changeSquareColorDarkGreen() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
   rowSquares.forEach((e) => {
     e.addEventListener('mouseover', () => {
-      e.setAttribute('style', `background-color: black`);
+      e.setAttribute('style', `background-color: #2C3333`);
     });
   });
 }
