@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #CBEDD5;
+  background-color: #bae9c8;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -81,6 +81,7 @@ h1 {
 
 .rowSquares {
   border: solid 1px #97DECE;
+  background-color: #CBEDD5;
   flex: 1;
   margin: 0;
   padding: 0;
