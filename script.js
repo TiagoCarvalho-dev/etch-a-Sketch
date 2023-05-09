@@ -15,17 +15,10 @@ document.getElementById('changeGridSizeButton').addEventListener('click', () => 
   changeSquareColorBlack();
 });
 
-document.getElementById('selectBlackPencilButton').addEventListener('click', () => {
-  changeSquareColorBlack();
-});
-
-document.getElementById('selectRainbowPencilButton').addEventListener('click', () => {
-  changeSquareColorRGB();
-});
-
-document.getElementById('selectEraserButton').addEventListener('click', () => {
-  removeSquareColor();
-});
+document.getElementById('selectBlackPencilButton').addEventListener('click', () => changeSquareColorBlack());
+document.getElementById('clearGridButton').addEventListener('click', () => clearGrid());
+document.getElementById('selectRainbowPencilButton').addEventListener('click', () => changeSquareColorRGB());
+document.getElementById('selectEraserButton').addEventListener('click', () => changeSquareColorNone());
 
 function setGridSize(gridSize) {
   for (let i = 0; i < gridSize; i++) {
@@ -70,6 +63,7 @@ function changeSquareColorRGB() {
 }
 
 function changeSquareColorBlack() {
+  
   const rowSquares = document.querySelectorAll('.rowSquares');
 
   rowSquares.forEach((e) => {
@@ -79,12 +73,24 @@ function changeSquareColorBlack() {
   });
 }
 
-function removeSquareColor() {
+function changeSquareColorNone() {
+  
   const rowSquares = document.querySelectorAll('.rowSquares');
 
   rowSquares.forEach((e) => {
     e.addEventListener('mouseover', () => {
       e.setAttribute('style', `background-color: #CBEDD5`);
     });
+  });
+}
+
+function clearGrid() {
+  
+  const rowSquares = document.querySelectorAll('.rowSquares');
+  
+  rowSquares.forEach((e) => {
+    for(let i = 0; i < rowSquares.length; i++) {
+      e.setAttribute('style', `background-color: #CBEDD5`);
+    }
   });
 }
