@@ -6,9 +6,9 @@ changeSquareColorDarkGreen();
 
 document.getElementById('changeGridSizeButton').addEventListener('click', () => {
   removeExistingGrid();
-  gridSize = prompt('Choose the desired grid size (1 - 99):\n\nExample: 16 = 16 x 16 grid.');
-    if (gridSize > 99 || gridSize < 1) {
-      alert('Please insert a number from 0 to 99.');
+  gridSize = prompt('Choose the desired grid size (1 - 50):\n\nExample: 16 = 16 x 16 grid.');
+    if (gridSize > 50 || gridSize < 1) {
+      alert('Please insert a number from 0 to 50.');
       gridSize = 16;
     }
   setGridSize(gridSize);
