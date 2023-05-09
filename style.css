@@ -1,5 +1,5 @@
 body {
-  background-color: gray;
+  background-color: #CBEDD5;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -23,8 +23,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 960px;
-  height: 960px;
+  width: 700px;
+  height: 700px;
   padding: 0;
 }
 

@@ -2,7 +2,7 @@ const gridContainer = document.getElementById('gridContainer');
 
 let gridSize;
 setGridSize(16);
-changeSquareColor();
+changeSquareColorBlack();
 
 document.getElementById('changeGridSizeButton').addEventListener('click', () => {
   removeExistingGrid();
@@ -12,7 +12,19 @@ document.getElementById('changeGridSizeButton').addEventListener('click', () => 
       gridSize = 16;
     }
   setGridSize(gridSize);
-  changeSquareColor();
+  changeSquareColorBlack();
+});
+
+document.getElementById('selectBlackPencilButton').addEventListener('click', () => {
+  changeSquareColorBlack();
+});
+
+document.getElementById('selectRainbowPencilButton').addEventListener('click', () => {
+  changeSquareColorRGB();
+});
+
+document.getElementById('selectEraserButton').addEventListener('click', () => {
+  removeSquareColor();
 });
 
 function setGridSize(gridSize) {
@@ -43,7 +55,7 @@ function removeExistingGrid() {
     }
 }
 
-function changeSquareColor() {
+function changeSquareColorRGB() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
@@ -53,6 +65,26 @@ function changeSquareColor() {
       let greenRandomValue = Math.floor(Math.random() * 256);
       let blueRandomValue = Math.floor(Math.random() * 256);
       e.setAttribute('style', `background-color: rgb(${redRandomValue}, ${greenRandomValue}, ${blueRandomValue})`);
+    });
+  });
+}
+
+function changeSquareColorBlack() {
+  const rowSquares = document.querySelectorAll('.rowSquares');
+
+  rowSquares.forEach((e) => {
+    e.addEventListener('mouseover', () => {
+      e.setAttribute('style', `background-color: black`);
+    });
+  });
+}
+
+function removeSquareColor() {
+  const rowSquares = document.querySelectorAll('.rowSquares');
+
+  rowSquares.forEach((e) => {
+    e.addEventListener('mouseover', () => {
+      e.setAttribute('style', `background-color: #CBEDD5`);
     });
   });
 }
