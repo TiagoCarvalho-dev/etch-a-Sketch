@@ -38,28 +38,23 @@ function removeExistingGrid() {
   
   const rows = document.querySelectorAll('.row');
   
-  rows.forEach((e) => {
-    for(let i = 0; i < rows.length; i++) {
-      e.removeChild(e.lastChild);
-    }
-  });
-    for(k = 0; k < rows.length; k++){
-      gridContainer.removeChild(gridContainer.lastChild);
-    }
+  for(k = 0; k < rows.length; k++){
+    gridContainer.removeChild(gridContainer.lastChild);
+  }
 }
 
 function changeSquareColorRGB() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
-  rowSquares.forEach((e) => {
-    e.addEventListener('mouseover', () => {
+  for (let row of rowSquares) {
+    row.addEventListener('mouseover', () => {
       let redRandomValue = Math.floor(Math.random() * 256);
       let greenRandomValue = Math.floor(Math.random() * 256);
       let blueRandomValue = Math.floor(Math.random() * 256);
-      e.setAttribute('style', `background-color: rgb(${redRandomValue}, ${greenRandomValue}, ${blueRandomValue})`);
+      row.setAttribute('style', `background-color: rgb(${redRandomValue}, ${greenRandomValue}, ${blueRandomValue})`);
     });
-  });
+  }
 }
 
 function changeSquareColorDarkGreen() {
