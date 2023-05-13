@@ -6,9 +6,9 @@ changeSquareColorDarkGreen();
 
 document.getElementById('changeGridSizeButton').addEventListener('click', () => {
   removeExistingGrid();
-  gridSize = prompt('Choose the desired grid size (1 - 50):\n\nExample: 16 = 16 x 16 grid.');
-    if (gridSize > 50 || gridSize < 1) {
-      alert('Please insert a number from 0 to 50.');
+  gridSize = prompt('Choose the desired grid size (1 - 99):\n\nExample: 16 = 16 x 16 grid.');
+    if (gridSize > 99 || gridSize < 1) {
+      alert('Please insert a number from 0 to 99.');
       gridSize = 16;
     }
   setGridSize(gridSize);
@@ -38,7 +38,7 @@ function removeExistingGrid() {
   
   const rows = document.querySelectorAll('.row');
   
-  for(k = 0; k < rows.length; k++){
+  for (let row of rows) {
     gridContainer.removeChild(gridContainer.lastChild);
   }
 }
@@ -47,12 +47,12 @@ function changeSquareColorRGB() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
-  for (let row of rowSquares) {
-    row.addEventListener('mouseover', () => {
+  for (let rowSquare of rowSquares) {
+    rowSquare.addEventListener('mouseover', () => {
       let redRandomValue = Math.floor(Math.random() * 256);
       let greenRandomValue = Math.floor(Math.random() * 256);
       let blueRandomValue = Math.floor(Math.random() * 256);
-      row.setAttribute('style', `background-color: rgb(${redRandomValue}, ${greenRandomValue}, ${blueRandomValue})`);
+      rowSquare.setAttribute('style', `background-color: rgb(${redRandomValue}, ${greenRandomValue}, ${blueRandomValue})`);
     });
   }
 }
@@ -61,31 +61,29 @@ function changeSquareColorDarkGreen() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
-  rowSquares.forEach((e) => {
-    e.addEventListener('mouseover', () => {
-      e.setAttribute('style', `background-color: #2C3333`);
+  for (let rowSquare of rowSquares) {
+    rowSquare.addEventListener('mouseover', () => {
+      rowSquare.setAttribute('style', `background-color: #2C3333`);
     });
-  });
+  }
 }
 
 function changeSquareColorNone() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
 
-  rowSquares.forEach((e) => {
-    e.addEventListener('mouseover', () => {
-      e.setAttribute('style', `background-color: #CBEDD5`);
+  for (let rowSquare of rowSquares) {
+    rowSquare.addEventListener('mouseover', () => {
+      rowSquare.setAttribute('style', `background-color: #CBEDD5`);
     });
-  });
+  }
 }
 
 function clearGrid() {
   
   const rowSquares = document.querySelectorAll('.rowSquares');
   
-  rowSquares.forEach((e) => {
-    for(let i = 0; i < rowSquares.length; i++) {
-      e.setAttribute('style', `background-color: #CBEDD5`);
-    }
-  });
+  for (let rowSquare of rowSquares) {
+    rowSquare.setAttribute('style', `background-color: #CBEDD5`);
+  }
 }
